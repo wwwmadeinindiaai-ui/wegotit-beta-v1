@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router";
 import LandingPage from "./pages/landingPage/LandingPage";
 import Navbar from "./global-components/Navbar";
 import GoodDesignPage from "./pages/goodDesignPage/GoodDesignPage";
+import Profile from "./pages/profile";
 import hamburger from './assets/icons/menu-mobile.svg'
 import cross from './assets/icons/cross.svg'
 import 'react-creative-cursor/dist/styles.css';
@@ -13,12 +14,8 @@ import mobileNavbarToggleAtom from "./recoil/atoms/mobileNavbarToggleAtom";
 import { useRecoilState } from "recoil";
 import websiteLoaderAtom from "./recoil/atoms/websiteLoaderAtom";
 
-
-
 function App() {
-
   const [mobileNavbarToggle, setMobileNavbarToogle] = useRecoilState(mobileNavbarToggleAtom);
-
   const [landingPageLoading, _setLandingPageLoading] = useRecoilState(websiteLoaderAtom);
 
   return (
@@ -32,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/gooddesign" element={<GoodDesignPage />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <div className="hidden lg:block">
         <AnimatedCursor
